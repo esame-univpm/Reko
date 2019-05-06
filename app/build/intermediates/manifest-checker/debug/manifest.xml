@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +22,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.esameUNIVPM.reko.ImageActivity" />
+        <activity android:name="com.esameUNIVPM.reko.GalleryActivity" />
         <activity android:name="com.esameUNIVPM.reko.CameraActivity" />
         <activity android:name="com.esameUNIVPM.reko.MainActivity" >
             <intent-filter>

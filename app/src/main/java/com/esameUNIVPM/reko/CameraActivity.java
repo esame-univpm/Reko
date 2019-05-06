@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -66,7 +67,10 @@ public class CameraActivity extends AppCompatActivity {
     {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK)
         {
-            //capture image
+            Uri selectedImage = data.getData();
+            Intent imageActivity = new Intent(this, ImageActivity.class);
+            imageActivity.putExtra("pickedImage", new PickedImage(selectedImage, this));
+            startActivity(imageActivity);
         }
     }
 
