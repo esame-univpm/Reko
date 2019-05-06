@@ -1,5 +1,6 @@
 package com.esameUNIVPM.reko;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -53,6 +54,11 @@ public class GalleryButton extends MainButton {
         if (p.mousePressed) {
             if (p.mouseX > 100 && p.mouseX < 300) {
                 if (p.mouseY > p.height - 300 && p.mouseY < p.height - 100) {
+
+                    //start activity to capture image from the camera
+                    Intent openGallery = new Intent(activity, CameraActivity.class);
+                    activity.startActivity(openGallery);
+
                     return true;
                 }
             }
