@@ -8,18 +8,27 @@ import android.widget.FrameLayout;
 import processing.android.CompatUtils;
 import processing.android.PFragment;
 
+/**
+ * Activity showed on start
+ */
+
 public class MainActivity extends AppCompatActivity {
-    MainProcessing mainprocessing;
+
+    MainProcessing mainProcessing;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //create and start a processing interface
+
         super.onCreate(savedInstanceState);
         FrameLayout frame = new FrameLayout(this);
         frame.setId(CompatUtils.getUniqueViewId());
         setContentView(frame, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
-        mainprocessing = new MainProcessing();
-        PFragment fragment = new PFragment(mainprocessing);
+        mainProcessing = new MainProcessing(this);
+        PFragment fragment = new PFragment(mainProcessing);
         fragment.setView(frame, this);
     }
 }
