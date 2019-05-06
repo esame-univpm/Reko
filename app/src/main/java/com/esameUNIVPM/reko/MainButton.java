@@ -10,7 +10,7 @@ public class MainButton {
     public void animation(){
 
     }
-    public void pressButton(){
-
+    public boolean pressButton(){
+        return false;
     }
 }
