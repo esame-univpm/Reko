@@ -18,8 +18,8 @@ public class GalleryButton extends MainButton {
     @Override
     public void draw() {
         p.fill(p.color(255, 0, 0));
-        p.ellipse(p.width + 200, p.height - 200, 200, 200);
-        p.image(gallerybutton, p.width - 300, p.height - 300, 200, 200);
+        p.ellipse(200, p.height - 200, 200, 200);
+        p.image(gallerybutton, 100, p.height - 300, 200, 200);
         animation();
 
     }
@@ -32,8 +32,8 @@ public class GalleryButton extends MainButton {
     @Override
     public boolean pressButton() {
         if (p.mousePressed) {
-            if (p.mouseX > p.width + 100 && p.mouseX < p.width + 300) {
-                if (p.mouseY > p.height + 100 && p.mouseY < p.height + 300) {
+            if (p.mouseX > 100 && p.mouseX < 300) {
+                if (p.mouseY > p.height - 100 && p.mouseY < p.height - 300) {
                     return true;
                 }
             }

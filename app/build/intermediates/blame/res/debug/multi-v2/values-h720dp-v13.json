@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\Utente\\Desktop\\Ale\\Reko\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/3f9b916005a600ddada30ffec5b911dd/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "C:\\Users\\Utente\\.gradle\\caches\\transforms-2\\files-2.1\\5d14ac87fb24e22869e59f30223ddd11\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

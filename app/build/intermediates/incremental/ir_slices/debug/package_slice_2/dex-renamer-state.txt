@@ -1,4 +1,4 @@
-#Mon May 06 14:34:34 CEST 2019
-base.0=/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/transforms/dexMerger/debug/2
+#Mon May 06 16:55:38 CEST 2019
+base.0=C\:\\Users\\Utente\\Desktop\\Ale\\Reko\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
 path.0=classes.dex
 renamed.0=classes.dex
