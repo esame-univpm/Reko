@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Utente\\Desktop\\Ale\\Reko\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Utente\\.gradle\\caches\\transforms-2\\files-2.1\\5d14ac87fb24e22869e59f30223ddd11\\res\\values-v16\\values-v16.xml",
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/3f9b916005a600ddada30ffec5b911dd/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Utente\\.gradle\\caches\\transforms-2\\files-2.1\\71b669265b65bfc62fb0e9e3a9628823\\res\\values-v16\\values-v16.xml",
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/a183c74db95ab6009e54cf2da8a3c8b2/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

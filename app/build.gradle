@@ -27,4 +27,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation files('libs/aws-android-sdk-rekognition.jar')
     implementation files('libs/processing-core.jar')
+    implementation files('libs/aws-android-sdk-core.jar')
 }

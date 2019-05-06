@@ -10,7 +10,7 @@ public class CameraButton extends MainButton {
 
     CameraButton (PApplet p ){
         this.p=p;
-        camerabutton=p.loadImage("camerabutton.png");
+        camerabutton=p.loadImage("camera_button.png");
         
 
     }
@@ -27,9 +27,9 @@ public class CameraButton extends MainButton {
         if(p.mousePressed){
             if(p.mouseX>p.width-300 && p.mouseX<p.width-100){
                 if(p.mouseY>p.height-300 && p.mouseY<p.height-100){
-                    for(int i=0; i<200; i=i+3){
+                    for(int i=0; i<200; i=i+4){
                         p.noFill();
-                        p.stroke(p.color(160,0,0));
+                        p.stroke(50);
                         p.ellipse(p.width-200, p.height-200,i,i);
 
 
