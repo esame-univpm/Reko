@@ -28,4 +28,5 @@ dependencies {
     implementation files('libs/aws-android-sdk-rekognition.jar')
     implementation files('libs/processing-core.jar')
     implementation files('libs/aws-android-sdk-core.jar')
+    implementation files('libs/gson-2.8.2.jar')
 }

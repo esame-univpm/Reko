@@ -56,7 +56,7 @@ public class GalleryButton extends MainButton {
                 if (p.mouseY > p.height - 300 && p.mouseY < p.height - 100) {
 
                     //start activity to capture image from the camera
-                    Intent openGallery = new Intent(activity, CameraActivity.class);
+                    Intent openGallery = new Intent(activity, GalleryActivity.class);
                     activity.startActivity(openGallery);
 
                     return true;

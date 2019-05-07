@@ -4,14 +4,17 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CameraActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +70,19 @@ public class CameraActivity extends AppCompatActivity {
     {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK)
         {
-            Uri selectedImage = data.getData();
+            //capture image
+            Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+
+            //getByteArray from Bitmap
+            PickedImage pickedImage = new PickedImage();
+            pickedImage.convertBitmap(this, selectedImage);
+            byte[] image = pickedImage.getImageArray();
+
             Intent imageActivity = new Intent(this, ImageActivity.class);
-            imageActivity.putExtra("pickedImage", new PickedImage(selectedImage, this));
+            imageActivity.putExtra("byteArray", image);
             startActivity(imageActivity);
+
+
         }
     }
 

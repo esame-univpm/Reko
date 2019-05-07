@@ -1,76 +1,72 @@
 package com.esameUNIVPM.reko;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
-
+import android.provider.MediaStore;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class PickedImage implements Parcelable {
+public class PickedImage {
 
-    private Uri imageSelected;
-    private byte[] image;
-    private AppCompatActivity activity;
+    private byte[] imageArray;
 
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    PickedImage() {
 
-        public PickedImage createFromParcel(Parcel in) {
-            return new PickedImage(in);
-        }
-
-        public PickedImage[] newArray(int size) {
-            return new PickedImage[size];
-        }
-    };
-
-    public PickedImage(Uri image, AppCompatActivity activity) {
-        this.imageSelected=image;
-        this.activity=activity;
-        converToByteArray();
     }
 
-    private void converToByteArray(){
+    public byte[] getImageArray() {
+        return imageArray;
+    }
+
+    /**
+     * Convert a Bitmap image into an array of byte.
+     * @param image Bitmap of the selected image.
+     */
+    public void convertBitmap(Context context, Bitmap image) {
+
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), image, "Title", null);
+
         try {
-            InputStream input = activity.getContentResolver().openInputStream(imageSelected);
-            ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-            int bufferSize = 1024;
-            byte[] buffer = new byte[bufferSize];
-            int len = 0;
-            while (true) {
-                if (!((len = input.read(buffer)) != -1)) {
-                    break;
-                }
-                byteBuffer.write(buffer, 0, len);
-            }
-            image = byteBuffer.toByteArray();
+            InputStream inputStream = context.getContentResolver().openInputStream(Uri.parse(path));
+            imageArray = getBytesArray(inputStream);
+
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void convertUri(Context context, Uri selectedImage){
+        try {
+            InputStream inputStream = context.getContentResolver().openInputStream(selectedImage);
+            imageArray = getBytesArray(inputStream);
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public void setImage(byte[] image){
-        this.image=image;
+    private byte[] getBytesArray(InputStream inputStream){
+        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+        int bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
+        int len = 0;
+
+        try {
+            while (true) {
+                if (((len = inputStream.read(buffer)) == -1)) {
+                    break;
+                }
+                byteBuffer.write(buffer, 0, len);
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return byteBuffer.toByteArray();
     }
 
-    public byte[] getImage(){
-        return image;
-    }
-
-    public PickedImage(Parcel in) {
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(imageSelected, flags);
-        dest.writeByteArray(image);
-    }
 }

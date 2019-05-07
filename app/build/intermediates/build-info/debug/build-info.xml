@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.4.0"
-    timestamp="1557186146305"
+    timestamp="1557246619274"
     token="-734533803847352271"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1557186146305"
+        timestamp="1557246619274"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
