@@ -70,7 +70,7 @@ public class GalleryActivity extends AppCompatActivity {
             //capture image
             Uri selectedImage = data.getData();
 
-            //getByteArray from Bitmap
+            //get ByteArray from Uri
             PickedImage pickedImage = new PickedImage();
             pickedImage.convertUri(this, selectedImage);
             byte[] image = pickedImage.getImageArray();

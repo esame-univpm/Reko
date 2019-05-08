@@ -2,12 +2,15 @@ package com.esameUNIVPM.reko;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.provider.MediaStore;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
+
+/**
+ * This class contains methods for convert an image, picked from camera or gallery, into an usable byte array.
+ */
 
 public class PickedImage {
 
@@ -17,7 +20,13 @@ public class PickedImage {
 
     }
 
+    /**
+     * Takes a previously filled array of bytes
+     * @return image in byte[]
+     */
     public byte[] getImageArray() {
+
+        //return a filled byte array
         return imageArray;
     }
 
@@ -25,48 +34,36 @@ public class PickedImage {
      * Convert a Bitmap image into an array of byte.
      * @param image Bitmap of the selected image.
      */
-    public void convertBitmap(Context context, Bitmap image) {
+    public void convertBitmap(Bitmap image) {
 
+        //fill ByteArrayOutputStream with image's bytes in JPEG format
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), image, "Title", null);
 
-        try {
-            InputStream inputStream = context.getContentResolver().openInputStream(Uri.parse(path));
-            imageArray = getBytesArray(inputStream);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        //fill byte array
+        imageArray = bytes.toByteArray();
     }
 
+    /**
+     * Converts Uri image into Bitmap image, then converts it into a byte array
+     * @param context context of current state of the application
+     * @param selectedImage Uri image to convert
+     */
     public void convertUri(Context context, Uri selectedImage){
+
+        Bitmap image = null;
+
+        //convert Uri into Bitmap
+        InputStream imageStream = null;
         try {
-            InputStream inputStream = context.getContentResolver().openInputStream(selectedImage);
-            imageArray = getBytesArray(inputStream);
+            imageStream = context.getContentResolver().openInputStream(selectedImage);
+            image = BitmapFactory.decodeStream(imageStream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
 
-    private byte[] getBytesArray(InputStream inputStream){
-        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-        int bufferSize = 1024;
-        byte[] buffer = new byte[bufferSize];
-        int len = 0;
-
-        try {
-            while (true) {
-                if (((len = inputStream.read(buffer)) == -1)) {
-                    break;
-                }
-                byteBuffer.write(buffer, 0, len);
-            }
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-        return byteBuffer.toByteArray();
+        //convert Bitmap into ByteArray
+        convertBitmap(image);
     }
 
 }

@@ -1,6 +1,8 @@
 package com.esameUNIVPM.reko;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import processing.core.PApplet;
@@ -56,9 +58,11 @@ public class CameraButton extends MainButton {
             if (p.mouseX > p.width - 300 && p.mouseX < p.width - 100) {
                 if (p.mouseY > p.height - 300 && p.mouseY < p.height - 100) {
 
+
                     //start activity to capture image from the camera
                     Intent openCamera = new Intent(activity, CameraActivity.class);
                     activity.startActivity(openCamera);
+
 
                     return true;
                 }

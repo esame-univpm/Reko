@@ -5,13 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -71,11 +71,11 @@ public class CameraActivity extends AppCompatActivity {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK)
         {
             //capture image
-            Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+            Bitmap selectedImage = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
 
-            //getByteArray from Bitmap
+            //get ByteArray from Bitmap
             PickedImage pickedImage = new PickedImage();
-            pickedImage.convertBitmap(this, selectedImage);
+            pickedImage.convertBitmap(selectedImage);
             byte[] image = pickedImage.getImageArray();
 
             Intent imageActivity = new Intent(this, ImageActivity.class);
@@ -86,6 +86,7 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
+    //This method is used to back in the main view
     public void backMainActivity(){
         Intent back = new Intent(this, MainActivity.class);
         startActivity(back);
