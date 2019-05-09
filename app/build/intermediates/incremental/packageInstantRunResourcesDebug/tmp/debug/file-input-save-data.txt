@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue May 07 01:38:09 CEST 2019
+#Thu May 09 11:24:12 CEST 2019
 1.base=/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/merged_assets/debug/out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

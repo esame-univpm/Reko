@@ -34,10 +34,7 @@
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
 
-        <activity android:name="com.esameUNIVPM.reko.ImageActivity" />
-        <activity android:name="com.esameUNIVPM.reko.GalleryActivity" />
-        <activity android:name="com.esameUNIVPM.reko.CameraActivity" />
-        <activity android:name="com.esameUNIVPM.reko.MainActivity" >
+        <activity android:name="reko.controller.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
