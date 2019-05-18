@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
 MERGED from [com.android.support:design:28.0.0] /home/tommaso/.gradle/caches/transforms-2/files-2.1/85cd66bea181335d772e2b2ed3053243/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/tommaso/.gradle/caches/transforms-2/files-2.1/3f9b916005a600ddada30ffec5b911dd/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tommaso/.gradle/caches/transforms-2/files-2.1/91616718ebc00fd7390c8bdf41dd21ab/AndroidManifest.xml:2:1-11:12
@@ -35,20 +35,20 @@ MERGED from [com.android.support:interpolator:28.0.0] /home/tommaso/.gradle/cach
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/tommaso/.gradle/caches/transforms-2/files-2.1/257958a75d6b3a0faf214e1d9bbff5d5/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/tommaso/.gradle/caches/transforms-2/files-2.1/e5fa7cd3cac56b80ddb82acfe2be784e/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /home/tommaso/.gradle/caches/transforms-2/files-2.1/b607d30c21cd6502fb63080b09aeaaef/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:3:5-30
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-38:12
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:1-39:12
 		INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:2:11-69
@@ -56,26 +56,30 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:6:5-65
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:7:5-65
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:6:22-62
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:7:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:7:5-80
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:7:22-77
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:8:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:9:22-78
 uses-feature#android.hardware.camera
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:10:5-12:35
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:11:5-13:35
 	android:required
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:12:9-32
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:13:9-32
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:11:9-47
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:12:9-47
 application
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:14:5-36:19
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:15:5-37:19
 MERGED from [com.android.support:design:28.0.0] /home/tommaso/.gradle/caches/transforms-2/files-2.1/85cd66bea181335d772e2b2ed3053243/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /home/tommaso/.gradle/caches/transforms-2/files-2.1/85cd66bea181335d772e2b2ed3053243/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/tommaso/.gradle/caches/transforms-2/files-2.1/91616718ebc00fd7390c8bdf41dd21ab/AndroidManifest.xml:9:5-20
@@ -87,43 +91,43 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/tommaso/.grad
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /home/tommaso/.gradle/caches/transforms-2/files-2.1/a183c74db95ab6009e54cf2da8a3c8b2/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:19:9-41
 	android:hardwareAccelerated
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:16:9-44
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:17:9-44
 	android:roundIcon
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:21:9-54
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:22:9-54
 	android:largeHeap
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:19:9-33
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:20:9-33
 	android:icon
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:23:9-40
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:24:9-40
 	android:networkSecurityConfig
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:20:9-69
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:21:9-69
 meta-data#com.google.android.actions
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:25:9-27:63
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:26:9-28:63
 	android:resource
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:27:13-60
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:28:13-60
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:26:13-54
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:27:13-54
 activity#reko.controller.MainActivity
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:29:9-35:20
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:30:9-36:20
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:29:19-47
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:30:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:30:13-34:29
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:31:17-69
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:31:25-66
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:33:17-77
+ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:33:27-74
+		ADDED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml:34:27-74
 uses-sdk
 INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/tommaso/AndroidStudioProjects/Reko/app/src/main/AndroidManifest.xml

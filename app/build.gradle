@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.esameUNIVPM.reko"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -26,8 +26,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('libs/aws-android-sdk-rekognition.jar')
     implementation files('libs/processing-core.jar')
+    implementation files('libs/aws-android-sdk-lambda.jar')
     implementation files('libs/aws-android-sdk-core.jar')
-    implementation files('libs/gson-2.8.2.jar')
+    implementation files('libs/gson-2.6.2.jar')
 }

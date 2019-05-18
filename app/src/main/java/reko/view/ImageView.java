@@ -3,8 +3,15 @@ package reko.view;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.Fragment;
+
+import java.io.File;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+
 import processing.core.*;
 import reko.controller.PickedImage;
+import reko.model.DetectLabels;
 
 public class ImageView implements AppView{
 
@@ -16,6 +23,8 @@ public class ImageView implements AppView{
     private String pathSelectedImage;
     //image selected
     private PImage selectedImage;
+
+    private byte[] image;
 
     public ImageView(PApplet p, Fragment pFragment){
         this.p=p;
@@ -32,7 +41,19 @@ public class ImageView implements AppView{
         //build a byte array from the selected image
         PickedImage pickedImage = new PickedImage();
         pickedImage.imageToByteArray(pathSelectedImage);
-        byte[] image = pickedImage.getImageArray();
+        image = pickedImage.getImageArray();
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DetectLabels detectLabels = new DetectLabels(pFragment.getContext());
+                List<byte[]> imageBytes = new ArrayList<>();
+                imageBytes.add(image);
+                detectLabels.startDetectLabels(imageBytes);
+            }
+        });
+
+        t.start();
 
         //convert image
         selectedImage = convertByteArray(image);

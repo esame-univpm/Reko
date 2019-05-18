@@ -2,5 +2,19 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.deps/build/src/AwsCCommon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.deps/build/src/AwsCEventStream" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.deps/build/src/AwsChecksums" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.deps/build/src/AwsCCommon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.deps/build/src/AwsCEventStream" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.deps/build/src/AwsChecksums" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.deps/build/src/AwsCCommon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.deps/build/src/AwsCEventStream" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.deps/build/src/AwsChecksums" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.deps/build/src/AwsCCommon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.deps/build/src/AwsCEventStream" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.deps/build/src/AwsChecksums" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/cpp/aws-c-common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/cpp/aws-sdk-cpp" vcs="Git" />
   </component>
 </project>
