@@ -4,7 +4,7 @@
             "outputFile": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/3f9b916005a600ddada30ffec5b911dd/res/values-v23/values-v23.xml",
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/07df9b748e469d42dc2de7a06d109b24/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/d55078942126a172c57919aed5906d02/res/values-v23/values-v23.xml",
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/7d461780965dfdb14b35e017637be202/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

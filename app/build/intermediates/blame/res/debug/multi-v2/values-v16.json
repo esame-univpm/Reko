@@ -4,7 +4,17 @@
             "outputFile": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/3f9b916005a600ddada30ffec5b911dd/res/values-v16/values-v16.xml",
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/4702c8777f25a20404be6b487bdf71bd/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/07df9b748e469d42dc2de7a06d109b24/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/a183c74db95ab6009e54cf2da8a3c8b2/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]
