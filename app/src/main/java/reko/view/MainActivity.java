@@ -27,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(startFragment.isActive()){
+        if(startFragment.isActive() || (viewsFragment.isActive() && viewsFragment.getViewsProcessing().getNumberView() == 0)){
             this.finish();
+        }
+        else if(viewsFragment.isActive() && viewsFragment.getViewsProcessing().getNumberView() != 0){
+            viewsFragment.getViewsProcessing().setBackPressed(true);
         }
     }
 
