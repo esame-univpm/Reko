@@ -1,6 +1,5 @@
 package reko.view;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,14 +8,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.util.List;
 import processing.android.PFragment;
+import reko.model.*;
 
 public class ViewsFragment extends PFragment {
+
+    private DetectLabelLambda detectLabelLambda;
 
     //instance of Processing sketch which runs on this fragment
     private ViewsProcessing viewsProcessing;
@@ -37,6 +38,13 @@ public class ViewsFragment extends PFragment {
     //path of the image selected
     private String pathSelectedImage = null;
 
+    //recognition result
+    private List<String> result;
+
+    public List<String> getResult() {
+        return result;
+    }
+
     //on create run StartView Processing sketch
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,43 +61,31 @@ public class ViewsFragment extends PFragment {
         switch (requestCode){
             case GALLERY_REQUEST:{
                 pathSelectedImage = setPathFromGallery(data);
-
-                viewsProcessing.loop();
-                System.out.println("Num: "+viewsProcessing.getNumberView());
-                System.out.println(pathSelectedImage);
-                //DA QUI
                 break;
             }
             case CAMERA_REQUEST:{
                 //set the path of selected image
                 pathSelectedImage = setPathFromCamera();
-
-                viewsProcessing.loop();
-                System.out.println("Num: "+viewsProcessing.getNumberView());
-                System.out.println(pathSelectedImage);
-                //DA QUI
                 break;
             }
         }
 
-        /*
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            //set the path of selected image
-            pathSelectedImage = setPathFromCamera();
+        switch (viewsProcessing.getNumberView()){
+            case 1:{
 
-            System.out.println(pathSelectedImage);
-            //DA QUI
-
+                //change fragment
+                mainActivity.getViewsFragment().setActive(false);
+                mainActivity.getDetectLabelFragment().setActive(true);
+                Bundle bundle = new Bundle();
+                bundle.putString("path", pathSelectedImage);    //pass the path to the new fragment
+                mainActivity.getDetectLabelFragment().setArguments(bundle);
+                mainActivity.getViewsFragment().getFragmentManager().beginTransaction().replace(R.id.frameLayout, mainActivity.getDetectLabelFragment()).commit();
+                break;
+            }
         }
-        if(requestCode == GALLERY_REQUEST && requestCode == Activity.RESULT_OK){
-            pathSelectedImage = setPathFromGallery(data);
-
-            System.out.println(pathSelectedImage);
-            //DA QUI
-
-        }
-        */
     }
+
+
 
     //starts camera intent
     public void openCamera(){

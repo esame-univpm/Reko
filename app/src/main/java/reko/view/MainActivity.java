@@ -8,6 +8,7 @@ public class MainActivity extends AppCompatActivity {
     //instance of various fragments
     private StartFragment startFragment;
     private ViewsFragment viewsFragment;
+    private DetectLabelFragment detectLabelFragment;
 
     //on create starts StartFragment
     @Override
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         startFragment.setMainActivity(this);
         viewsFragment = new ViewsFragment();
         viewsFragment.setMainActivity(this);
+        detectLabelFragment = new DetectLabelFragment();
+        detectLabelFragment.setMainActivity(this);
 
         //starts StartFragment
         getSupportFragmentManager().beginTransaction().attach(startFragment).commit();
@@ -41,5 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     public ViewsFragment getViewsFragment(){
         return viewsFragment;
+    }
+
+    public DetectLabelFragment getDetectLabelFragment() {
+        return detectLabelFragment;
     }
 }
