@@ -1476,6 +1476,10 @@
         "source": "/home/tommaso/.gradle/caches/transforms-2/files-2.1/e86eb9c0b389848607747eca0d886816/res/interpolator/mtrl_linear.xml"
     },
     {
+        "merged": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/res/merged/debug/mipmap-hdpi_icon1.png.flat",
+        "source": "/home/tommaso/AndroidStudioProjects/Reko/app/src/main/res/mipmap-hdpi/icon1.png"
+    },
+    {
         "merged": "/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/tommaso/AndroidStudioProjects/Reko/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
