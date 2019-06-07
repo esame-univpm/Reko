@@ -1,50 +1,62 @@
 package reko;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import reko.fragment.StartFragment;
 import reko.fragment.ViewsFragment;
 
+/**
+ * The MainActivity class control the Reko's activity. It contains a Fragment HashMap
+ */
 public class MainActivity extends AppCompatActivity {
 
-    //instance of various fragments
-    private StartFragment startFragment;
-    private ViewsFragment viewsFragment;
+    private ViewsFragment viewsFragment;    //instance of ViewProcessing
 
-    //on create starts StartFragment
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //creates fragments
-        startFragment = new StartFragment();
+        //sets StartFragment
+        StartFragment startFragment = new StartFragment();
         startFragment.setMainActivity(this);
-        startFragment.setActive(true);
 
+        //sets ViewsFragment
         viewsFragment = new ViewsFragment();
         viewsFragment.setMainActivity(this);
-        viewsFragment.setActive(false);
 
-        //starts StartFragment
+        //start StartFragment
         getSupportFragmentManager().beginTransaction().attach(startFragment).commit();
+
     }
 
     @Override
     public void onBackPressed() {
-        if(startFragment.isActive() || (viewsFragment.isActive() && viewsFragment.getViewsProcessing().getNumberView()==0)){
-            this.finish();
-        }
-        if(viewsFragment.isActive() && viewsFragment.getViewsProcessing().getNumberView() != 0){
-            viewsFragment.getViewsProcessing().setBackPressed(true);
+        switch (viewsFragment.getViewsController().getNumberView()){
+            case 0:{
+                this.finish();
+                break;
+            }
+            case 1:{
+                viewsFragment.getViewsController().setNumberView(-4);   //animation LabelRequest-Home
+                break;
+            }
+            case 2:{
+                viewsFragment.getViewsController().setNumberView(-5);   //animation FaceRequest-Home
+                break;
+            }
+            case 3:{
+                viewsFragment.getViewsController().setNumberView(-6);   //animation TextRequest-Home
+                break;
+            }
         }
     }
 
-    public StartFragment getStartFragment() {
-        return startFragment;
-    }
-
+    /**
+     * Returns the ViewsFragment object
+     * @return
+     */
     public ViewsFragment getViewsFragment() {
         return viewsFragment;
     }

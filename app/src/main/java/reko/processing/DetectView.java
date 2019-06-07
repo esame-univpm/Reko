@@ -2,59 +2,118 @@ package reko.processing;
 
 import processing.core.PImage;
 
-public class DetectView {
+/**
+ * The DetectView class draws and control the detect views.
+ */
+public class DetectView extends MainView {
 
-    //instance of Processing's sketch in use
-    private ViewsProcessing viewsProcessing;
+    private PImage icon;    //image of detect icon
 
-    //image in background
-    private PImage background;
+    private int[] colorRGB; //color of view
 
-    //color
-    private int[] colorRGB;
+    private UserButton cameraButton;    //open camera button
+    private UserButton galleryButton;   //open gallery button
 
-    //buttons
-    private TakeButton cameraButton;
-    private TakeButton galleryButton;
-
-    DetectView(ViewsProcessing viewsProcessing, String background, int[] colorRGB){
-        this.viewsProcessing = viewsProcessing;
-        this.background = viewsProcessing.loadImage(background);
+    public DetectView(ViewsController viewsController, String str, int[] colorRGB) {
+        super(viewsController);
+        icon = viewsController.loadImage(str);
         this.colorRGB = colorRGB;
         init();
     }
 
-    private void init(){
-        cameraButton = new TakeButton(viewsProcessing, viewsProcessing.width-300, viewsProcessing.height-300, "camera_button.png");
-        galleryButton = new TakeButton(viewsProcessing, 100, viewsProcessing.height-300, "gallery_button.png");
+    /**
+     * Sets the things to show in this view.
+     */
+    @Override
+    public void init() {
+        super.init();
+        cameraButton = new UserButton(viewsController){
+
+            private boolean flagPressed = false;
+
+            @Override
+            public void onClick() {
+                viewsController.noLoop();
+                viewsController.getMainActivity().getViewsFragment().openCamera();
+            }
+
+            @Override
+            public void drawButton() {
+                super.pApplet.image(buttonImage, positionX, positionY, 200, 200);  //draws image over the button
+                if(isPressed()){
+                    flagPressed = true;
+                }
+                drawAnimation();
+            }
+
+            private void drawAnimation(){
+                if(flagPressed){
+                    viewsController.stroke(255);
+                    viewsController.strokeWeight(12);
+                    viewsController.noFill();
+                    viewsController.ellipse(positionX+100, positionY+100, 200, 200);
+                    flagPressed = false;
+                    onClick();
+                }
+            }
+        };
+        cameraButton.setButtonImage(viewsController.loadImage("camera_button.png"));
+        cameraButton.setSize(200, 200);
+        cameraButton.setPosition(viewsController.width-300, viewsController.height-300);
+
+        galleryButton = new UserButton(viewsController){
+
+            private boolean flagPressed = false;
+
+            @Override
+            public void onClick() {
+                viewsController.noLoop();
+                viewsController.getMainActivity().getViewsFragment().openGallery();
+            }
+            @Override
+            public void drawButton() {
+                super.pApplet.image(buttonImage, positionX, positionY, 200, 200);  //draws image over the button
+                if(isPressed()){
+                    flagPressed = true;
+                }
+                drawAnimation();
+            }
+
+            private void drawAnimation(){
+                if(flagPressed){
+                    viewsController.stroke(255);
+                    viewsController.strokeWeight(12);
+                    viewsController.noFill();
+                    viewsController.ellipse(positionX+100, positionY+100, 200, 200);
+                    flagPressed = false;
+                    onClick();
+                }
+            }
+        };
+        galleryButton.setButtonImage(viewsController.loadImage("gallery_button.png"));
+        galleryButton.setSize(200, 200);
+        galleryButton.setPosition(100, viewsController.height-300);
     }
 
-    public void draw(){
-        viewsProcessing.fill(viewsProcessing.color(colorRGB[0], colorRGB[1], colorRGB[2]));
-        viewsProcessing.rect(0, viewsProcessing.height/2-200, viewsProcessing.width, 300);
-        viewsProcessing.image(background, viewsProcessing.width/2-150, viewsProcessing.height/2-200, 300, 300);
-        viewsProcessing.fill(viewsProcessing.color(50, 50, 50));
-        viewsProcessing.rect(0, viewsProcessing.height/2+100, viewsProcessing.width, viewsProcessing.height);
+    /**
+     * Draws this view
+     */
+    @Override
+    public void draw() {
+        super.draw();   //draws background
+        //draws color bar with icon
+        viewsController.noStroke();
+        viewsController.fill(viewsController.color(colorRGB[0], colorRGB[1], colorRGB[2]));
+        viewsController.rect(0, viewsController.height/2-200, viewsController.width, 300);
+        viewsController.image(icon, viewsController.width/2-150, viewsController.height/2-200, 300, 300);
+        viewsController.fill(viewsController.color(50, 50, 50));
+        viewsController.rect(0, viewsController.height/2+100, viewsController.width, viewsController.height);
 
-        viewsProcessing.fill(255);
-        viewsProcessing.textSize(70);
-        viewsProcessing.text("Select image", viewsProcessing.width/2-200, viewsProcessing.height-600);
+        viewsController.fill(255);
+        viewsController.textSize(70);
+        viewsController.text("Select image", viewsController.width/2-200, viewsController.height-600);
 
-        //draws buttons
-        cameraButton.draw();
-        galleryButton.draw();
-
-        //if one button was pressed, start an intent to pick an image
-        if(cameraButton.isPressed()){
-            cameraButton.setPressed(false);
-            viewsProcessing.noLoop();
-            viewsProcessing.getMainActivity().getViewsFragment().openCamera();
-        }
-        if(galleryButton.isPressed()){
-            galleryButton.setPressed(false);
-            viewsProcessing.noLoop();
-            viewsProcessing.getMainActivity().getViewsFragment().openGallery();
-        }
+        cameraButton.drawButton();
+        galleryButton.drawButton();
     }
-
 }

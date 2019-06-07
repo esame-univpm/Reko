@@ -5,31 +5,42 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
+
+import reko.MainActivity;
 import reko.R;
 import reko.processing.StartView;
 
+/**
+ * The StartFragment class is used to load conditions in which Reko can run, all of this is showed to the user using StartView sketch.
+ */
 public class StartFragment extends MainFragment {
 
-    //instance of Processing sketch which runs on this fragment
-    private StartView startView;
+    private StartView startView;     //instance of Processing sketch which runs on this fragment
 
-    //on create run StartView Processing sketch
+    public StartFragment(){
+        super();
+    }
+
+    /**
+     * When this fragment is created, it runs StartView sketch
+     * @param savedInstanceState
+     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //runs startView, the Processing sketch
-        startView = new StartView();
-        startView.setMainActivity(super.mainActivity);
+        startView = new StartView(this);
         setSketch(startView);
         setView(getActivity().findViewById(R.id.frameLayout), getActivity());
     }
 
-
-    //checks permissions for use this app
-    public void checkPermissions(){
+    /**
+     * Checks if the permissions which is necessary to use this app are already granted. If they are not granted, send an user request to granted them.
+     */
+    public void checksPermissions(){
         //check status of the permissions
         if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
@@ -50,8 +61,10 @@ public class StartFragment extends MainFragment {
         }
     }
 
-    //checks if there is an internet connection
-    public void checkConnection(){
+    /**
+     * Checks if there is an available Internet connection.
+     */
+    public void checksConnection(){
         ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected()){
             //the loading bar advances
@@ -63,7 +76,12 @@ public class StartFragment extends MainFragment {
         }
     }
 
-    //this method define what happens when a permission is requested from the user
+    /**
+     * This method define what happens when a permission is requested to the user
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
@@ -78,4 +96,5 @@ public class StartFragment extends MainFragment {
             startView.setLoadingBarStep(2);
         }
     }
+
 }

@@ -1,47 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="29"
-    build-mode="HOT_WARM"
-    density="420dpi"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="24"
+    build-mode="FULL"
+    density="xxhdpi"
     format="10"
     plugin-version="3.4.1"
-    timestamp="1559665690478"
+    timestamp="1559858587319"
     token="-734533803847352271"
-    verifier="COMPATIBLE" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="127" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="34" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="24" />
+        duration="0" />
     <task
         name="verifier"
-        duration="7" />
+        duration="0" />
 
     <artifact
-        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1559650278031"
+        timestamp="1559858587319"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -70,50 +97,9 @@
         <artifact
             location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1559654579701"
-        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1559663135267"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1559665399950"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1559665630727"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1559665690478"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

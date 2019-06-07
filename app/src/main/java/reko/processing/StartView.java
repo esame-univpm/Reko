@@ -1,34 +1,45 @@
 package reko.processing;
 
+import processing.core.PApplet;
 import processing.core.PImage;
+import reko.MainActivity;
 import reko.R;
+import reko.fragment.StartFragment;
 
-/**
- * The StartView class manage the conditions in which Reko must run.
- *
- * This class checks the app permissions and checks if there is an active internet connection.
- * All of this are displayed to the user thanks to a PApplet script.
- */
-public class StartView extends MainProcessing {
+public class StartView extends PApplet {
+
+    private StartFragment startFragment;    //instance of fragment in which this sketch runs
+
+    private PImage background;  //image on background
 
     private PImage reload;  //reload icon
+
     private int loadingBarStep = 1; //steps of the loading bar, on create it starts from 1
 
     /**
-     *Overrides the MainProcessing's setup method
+     * Constructor of this class, as argument receive a MainActivity object.
+     * @param startFragment
      */
-    @Override
-    public void setup() {
-        super.setup();
-        reload = super.loadImage("reload.png"); //load image for reload button
+    public StartView(StartFragment startFragment){
+        this.startFragment = startFragment;   //sets mainActivity object
     }
 
     /**
-     * Overrides the MainProcessing's draw method
+     * This method sets the image that will be used in this view
+     */
+    @Override
+    public void setup() {
+        background = loadImage("home_background.jpg");  //sets background image
+        reload = loadImage("reload.png"); //load image for reload button
+    }
+
+    /**
+     * Draws this view and control if the permissions are granted and if there is an internet connection.
      */
     @Override
     public void draw() {
-        super.draw();   //draws background's image
+        image(background, 0, 0, width, height); //display the image on background
+
         super.frameRate(3); //sets frame rate at 3 fps
 
         //draws title
@@ -36,6 +47,7 @@ public class StartView extends MainProcessing {
         super.fill(super.color(50, 50, 50));    //sets color of title
         super.text("Reko", super.width/2-220, 350); //shows title
 
+        //draws the loading bar with relative feedback text
         switch(loadingBarStep){
             default:{
                 showLoadingBar(loadingBarStep); //displays loading bar and the relative step
@@ -52,9 +64,7 @@ public class StartView extends MainProcessing {
             }
             case 4:{
                 //switch to ViewsFragment
-                mainActivity.getStartFragment().setActive(false);
-                mainActivity.getViewsFragment().setActive(true);
-                mainActivity.getStartFragment().getFragmentManager().beginTransaction().replace(R.id.frameLayout, mainActivity.getViewsFragment()).commit();
+                startFragment.getFragmentManager().beginTransaction().replace(R.id.frameLayout, startFragment.getMainActivity().getViewsFragment()).commit();
                 break;
             }
         }
@@ -77,12 +87,12 @@ public class StartView extends MainProcessing {
         switch(loadingBarStep){
             case 1:{
                 text = "Check permissions"; //sets feedback text
-                super.mainActivity.getStartFragment().checkPermissions();   //starts method to checks permission
+                startFragment.checksPermissions();   //starts method to checks permission
                 break;
             }
             case 2:{
                 text = "Check connection";  //sets feedback text
-                super.mainActivity.getStartFragment().checkConnection();    //starts method to checks internet connection
+                startFragment.checksConnection();    //starts method to checks internet connection
                 break;
             }
         }

@@ -30,4 +30,5 @@ dependencies {
     implementation files('libs/aws-android-sdk-lambda.jar')
     implementation files('libs/aws-android-sdk-core.jar')
     implementation files('libs/gson-2.6.2.jar')
+    implementation files('libs/aws-android-sdk-rekognition.jar')
 }
