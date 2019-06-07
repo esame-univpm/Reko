@@ -50,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 viewsFragment.getViewsController().setNumberView(-6);   //animation TextRequest-Home
                 break;
             }
+            case 6:{
+                viewsFragment.getViewsController().setNumberView(-6);   //animation TextRequest-Home
+                break;
+            }
+            case 9:{
+                viewsFragment.getViewsController().setNumberView(-6);   //animation TextRequest-Home
+                break;
+            }
         }
     }
 

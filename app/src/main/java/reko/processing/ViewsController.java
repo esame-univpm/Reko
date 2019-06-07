@@ -45,12 +45,18 @@ public class ViewsController extends PApplet {
         viewsMap.put(-5, new TransitionView(this, new int[] {231,80,66}, true, height/2, 150, 0, width/2, height));
         //create transition TextRequest-Home
         viewsMap.put(-6, new TransitionView(this, new int[] {247, 134, 56}, true, height/2, 150, 0, width/2, height));
+        //create LoadingLabel view
+        viewsMap.put(4, new LoadingLabel(this));
+        //create LoadingFace view
+        viewsMap.put(5, new LoadingFace(this));
+        //create LoadingText view
+        viewsMap.put(6, new LoadingText(this));
         //create LabelResult
-        viewsMap.put(4, new LabelResult(this));
+        viewsMap.put(7, new LabelResult(this));
         //create FaceResult
-        viewsMap.put(5, new FaceResult(this));
+        viewsMap.put(8, new FaceResult(this));
         //create TextResult
-        viewsMap.put(6, new TextResult(this));
+        viewsMap.put(9, new TextResult(this));
     }
 
     /**

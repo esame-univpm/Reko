@@ -4,24 +4,14 @@ import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClient;
-import com.amazonaws.services.rekognition.model.DetectTextRequest;
-import com.amazonaws.services.rekognition.model.DetectTextResult;
-import com.amazonaws.services.rekognition.model.Image;
-import com.amazonaws.services.rekognition.model.TextDetection;
-
-import java.nio.ByteBuffer;
-import java.util.List;
-
-import processing.core.PImage;
 import reko.model.ManageImage;
 
+/**
+ * The LoadingLabel class is used to load the result of a detect label request.
+ */
 public class LoadingLabel extends MainView {
 
-    private PImage image = null;
-
     private byte[] imageBytes;
-
-    List<TextDetection> textDetections;
 
     private int setLoadingBar = 1;
 
@@ -55,9 +45,7 @@ public class LoadingLabel extends MainView {
             public void run() {
                 CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(viewsController.getMainActivity().getViewsFragment().getContext(), "eu-west-1:a5008d71-c74e-41c8-a90e-1f0ee904bb40", Regions.EU_WEST_1);
                 AmazonRekognition rekognitionClient = new AmazonRekognitionClient(credentialsProvider);
-                DetectTextRequest request = new DetectTextRequest().withImage(new Image().withBytes(ByteBuffer.wrap(imageBytes)));
-                DetectTextResult result = rekognitionClient.detectText(request);
-                textDetections = result.getTextDetections();
+
             }
         });
         t.start();
@@ -69,9 +57,8 @@ public class LoadingLabel extends MainView {
      */
     public void setImage(String pathSelectedImage) {
         if(pathSelectedImage!=null){
-            this.image = ManageImage.imageToPImage(pathSelectedImage);
             this.imageBytes = ManageImage.imageToByteArray(pathSelectedImage);
-
+            ((LabelResult) viewsController.getViewsMap().get(7)).setImage(ManageImage.imageToPImage(pathSelectedImage));
             startDetect();
         }
     }

@@ -1,4 +1,4 @@
-#Fri Jun 07 00:01:10 CEST 2019
+#Fri Jun 07 16:51:47 CEST 2019
 base.0=/home/tommaso/AndroidStudioProjects/Reko/app/build/intermediates/transforms/dexMerger/debug/4
 path.0=classes.dex
 renamed.0=classes.dex

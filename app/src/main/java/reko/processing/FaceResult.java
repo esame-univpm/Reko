@@ -3,8 +3,10 @@ package reko.processing;
 import android.widget.Toast;
 
 import processing.core.PImage;
-import reko.model.ManageImage;
 
+/**
+ * The FaceResult class displays to the user the results of Detect Faces provided by AWS Rekognition
+ */
 public class FaceResult extends MainView{
 
     private PImage image = null;
@@ -30,9 +32,11 @@ public class FaceResult extends MainView{
         }
     }
 
-    public void setImage(String pathSelectedImage) {
-        if(pathSelectedImage!=null){
-            this.image = ManageImage.imageToPImage(pathSelectedImage);
-        }
+    /**
+     * Sets the image that will be showed
+     * @param image
+     */
+    public void setImage(PImage image) {
+        this.image = image;
     }
 }

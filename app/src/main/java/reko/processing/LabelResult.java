@@ -3,7 +3,6 @@ package reko.processing;
 import android.widget.Toast;
 
 import processing.core.PImage;
-import reko.model.ManageImage;
 
 /**
  * The LabelResult class displays to the user the results of Detect Labels provided by AWS Rekognition
@@ -33,9 +32,11 @@ public class LabelResult extends MainView {
         }
     }
 
-    public void setImage(String pathSelectedImage) {
-        if(pathSelectedImage!=null){
-            this.image = ManageImage.imageToPImage(pathSelectedImage);
-        }
+    /**
+     * Sets the image that will be showed
+     * @param image
+     */
+    public void setImage(PImage image) {
+        this.image = image;
     }
 }

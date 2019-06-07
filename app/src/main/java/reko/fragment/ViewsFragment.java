@@ -16,6 +16,9 @@ import java.io.IOException;
 
 import reko.processing.FaceResult;
 import reko.processing.LabelResult;
+import reko.processing.LoadingFace;
+import reko.processing.LoadingLabel;
+import reko.processing.LoadingText;
 import reko.processing.TextResult;
 import reko.processing.ViewsController;
 
@@ -138,17 +141,19 @@ public class ViewsFragment extends MainFragment {
             //switch to loading view
             switch (viewsController.getNumberView()){
                 case 1:{
-                    ((LabelResult) viewsController.getViewsMap().get(4)).setImage(pathSelectedImage);
+                    ((LoadingLabel) viewsController.getViewsMap().get(4)).setImage(pathSelectedImage);
                     viewsController.setNumberView(4);
                     break;
                 }
                 case 2:{
-                    ((FaceResult) viewsController.getViewsMap().get(5)).setImage(pathSelectedImage);
+                    ((LoadingFace) viewsController.getViewsMap().get(5)).setImage(pathSelectedImage);
                     viewsController.setNumberView(5);
                     break;
                 }
                 case 3:{
-                    ((TextResult) viewsController.getViewsMap().get(6)).setImage(pathSelectedImage);
+                    viewsController.noLoop();
+                    ((LoadingText) viewsController.getViewsMap().get(6)).setImage(pathSelectedImage);
+                    viewsController.loop();
                     viewsController.setNumberView(6);
                     break;
                 }
